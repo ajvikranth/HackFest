@@ -1,20 +1,20 @@
-
 from dotenv import load_dotenv
 import os
+import joblib
 from together import Together
+from sklearn.preprocessing import StandardScaler
 
-load_dotenv()
-
-
-
-
+def redistribute_classification(df_km):
+    scaler = StandardScaler()
+    X_train = scaler.fit_transform(df_km)
+    knn = joblib.load("./model/knn.pkl")
+    return knn.predict(X_train)
 
 def find_the_product_recommendation(product_name: str = '', product_quantity: str = ''):
     """
     """
+    load_dotenv("../.envfile")
     TOGETHER_API = os.getenv('TOGETHER_API')
-
-
     client = Together(api_key=TOGETHER_API)
 
     response = client.chat.completions.create(
@@ -35,7 +35,3 @@ def find_the_product_recommendation(product_name: str = '', product_quantity: st
     )
     all_text = str().join([chunk.choices[0].text for chunk in response])
     return all_text
-
-
-# product_name = 'eggs'
-# product_quantity = 10

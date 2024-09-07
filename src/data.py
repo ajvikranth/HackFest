@@ -1,8 +1,8 @@
 import requests
 import random
 import pandas as pd
-import joblib
-from sklearn.preprocessing import StandardScaler
+from datetime import datetime
+
 
 
 def get_data():
@@ -24,7 +24,7 @@ def handle_threshold_for_expiry(date):
         return 'c4'
     return 'c5'
 
-def api_data_preprocessing():
+def api_data_preprocessing(expire):
 
     df = pd.DataFrame(get_data())
     df['expiresAt'] = pd.to_datetime(df['expiresAt'])
@@ -71,7 +71,7 @@ def api_data_preprocessing():
 
     # final_df.to_csv('updated.csv',index=False)
 
-    return final_df
+    return final_df[final_df['expiresAt'] == expire]
 
 def scale(x):
     if "kg" in x:
@@ -84,20 +84,17 @@ def scale(x):
         return float(x[:-1])*1000
     return float(x)
 
-def data_processing():
-    df = api_data_preprocessing()
+def data_processing(expiry):
+    df = api_data_preprocessing(expiry)
     df['remaining_quantity'] = df['demand'] - df['available']
     df['weight'] = df['weight'].apply(scale)
     chosen_features = ["expire_in", "remaining_quantity", "price", "weight"]
     df_km = df[chosen_features]
     return df_km
 
-def redistribute_classification(df_km):
-    scaler = StandardScaler()
-    X_train = scaler.fit_transform(df_km)
-    knn = joblib.load("./model/knn.pkl")
-    print(knn.predict(X_train))
-
 if __name__ == "__main__":
-    df = data_processing()
-    redistribute_classification(df)
+    date_str = '2024-09-23'
+    date_object = datetime.strptime(date_str, '%Y-%m-%d')
+    print(type(date_object))
+    print(date_object)
+    print(data_processing(date_object))  # printed in default format
