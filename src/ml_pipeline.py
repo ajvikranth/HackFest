@@ -1,7 +1,7 @@
 import pandas as pd
 import json
 from data import data_processing
-from predict import redistribute_classification, find_the_product_recommendation
+from predict import redistribute_classification, find_the_product_recommendation, find_the_bundle_recommendation
 from second_model_fn import redistributed_products, base_df
 
 def main(expiresAt, store_id):
@@ -19,8 +19,9 @@ def main(expiresAt, store_id):
     output_json = {
     "message": "success",
     "current_store": store_id,
-    "is_llm": False,
+    "is_llm": False, 
     "llm": "",
+    "llm_bundle" : "",
     "is_store": False,
     "store": {},
     "product_names":[],
@@ -70,6 +71,7 @@ def main(expiresAt, store_id):
     print(recycle_input)
     if output_json['is_llm']:
         output_json['llm'] = find_the_product_recommendation(recycle_input)
+        output_json['llm_bundle'] = find_the_bundle_recommendation(recycle_input)
     
     return json.dumps(output_json)
 
