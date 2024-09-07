@@ -73,7 +73,7 @@ def main(expiresAt, store_id):
         output_json['llm'] = find_the_product_recommendation(recycle_input)
         output_json['llm_bundle'] = find_the_bundle_recommendation(recycle_input)
     
-    return json.dumps(output_json)
+    return output_json
 
 if __name__=="__main__":
     expiresAt, store_id = '2024-10-15' , 2
