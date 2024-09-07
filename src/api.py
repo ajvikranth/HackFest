@@ -11,7 +11,7 @@ def get_data():
     print(request.json)
     expiresAt = request.json['expires_at']
     store_id = request.json['store_id']
-    date_obj = datetime.datetime.strptime(expiresAt, "%Y-%m-%d")
+    date_obj = datetime.datetime.strptime(expiresAt, "%Y-%m-%dT%H:%M:%S.%fZ")
     expiresAt = date_obj.strftime("%Y-%m-%d")
     if not expiresAt or not store_id:
         return jsonify({"error": "Missing expiresAt or store_id"}), 400
