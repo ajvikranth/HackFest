@@ -3,6 +3,7 @@ import os
 import joblib
 from together import Together
 from sklearn.preprocessing import StandardScaler
+import time
 
 def redistribute_classification(df_km):
     scaler = StandardScaler()
@@ -14,6 +15,7 @@ def find_the_product_recommendation(product_name: str = '', product_quantity: st
     """
     """
     load_dotenv("../.envfile")
+    time.sleep(1)
     TOGETHER_API = os.getenv('TOGETHER_API')
     client = Together(api_key=TOGETHER_API)
 
@@ -22,7 +24,7 @@ def find_the_product_recommendation(product_name: str = '', product_quantity: st
         messages=[
             {
                     "role": "user",
-                    "content": f"Assume you are a Chief. I have {product_quantity} of {product_name}. I want all the products that could be done"
+                    "content": f"Assume you are a Chief.You have {product_quantity} of {product_name}. I want a list of all Repurpose Prepared Foods items that could be made with these products as main ingredient and some other ingredients"
             },
     ],
         max_tokens=6342,

@@ -85,16 +85,14 @@ def scale(x):
     return float(x)
 
 def data_processing(expiry):
+    expiry = datetime.strptime(expiry, '%Y-%m-%d')
     df = api_data_preprocessing(expiry)
     df['remaining_quantity'] = df['demand'] - df['available']
     df['weight'] = df['weight'].apply(scale)
-    chosen_features = ["expire_in", "remaining_quantity", "price", "weight"]
-    df_km = df[chosen_features]
-    return df_km
+    
+    return df
 
 if __name__ == "__main__":
     date_str = '2024-09-23'
-    date_object = datetime.strptime(date_str, '%Y-%m-%d')
-    print(type(date_object))
-    print(date_object)
-    print(data_processing(date_object))  # printed in default format
+    
+    print(data_processing(date_str))  # printed in default format

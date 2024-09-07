@@ -1,0 +1,50 @@
+                         name  available
+353   Organic Cherry Tomatoes         20
+706   Organic Cherry Tomatoes         18
+1059  Organic Cherry Tomatoes         12
+1412  Organic Cherry Tomatoes          9
+[{'role': 'user', 'content': 'Assume you are a Chief.You have  of                          name  available\n353   Organic Cherry Tomatoes         20\n706   Organic Cherry Tomatoes         18\n1059  Organic Cherry Tomatoes         12\n1412  Organic Cherry Tomatoes          9. I want a list of all Repurpose Prepared Foods items that could be made with these products as main ingredient and some other ingredients'}]
+As a Chief, I have the following Repurpose Prepared Foods items that can be made with the given ingredients:
+
+**Assumed Ingredients:**
+
+1. Chicken breast
+2. Ground beef
+3. Sausages
+4. Bacon
+5. Shrimp
+6. Salmon fillets
+7. Tortillas
+8. Rice
+9. Quinoa
+10. Pasta
+11. Canned black beans
+12. Canned diced tomatoes
+13. Canned corn
+14. Canned green beans
+15. Olive oil
+16. Salt
+17. Pepper
+18. Garlic powder
+19. Onion powder
+20. Paprika
+
+**Repurpose Prepared Foods Items:**
+
+1. **Chicken Fajitas**: Chicken breast, tortillas, olive oil, garlic powder, onion powder, paprika
+2. **Beef Tacos**: Ground beef, tortillas, olive oil, garlic powder, onion powder, paprika
+3. **Shrimp Scampi Pasta**: Shrimp, pasta, olive oil, garlic powder, onion powder, paprika
+4. **Salmon Burgers**: Salmon fillets, tortillas, olive oil, garlic powder, onion powder, paprika
+5. **Chicken Quesadillas**: Chicken breast, tortillas, olive oil, garlic powder, onion powder, paprika
+6. **Beef and Vegetable Stir Fry**: Ground beef, canned black beans, canned diced tomatoes, canned corn, olive oil, garlic powder, onion powder, paprika
+7. **Shrimp and Vegetable Skewers**: Shrimp, canned green beans, olive oil, garlic powder, onion powder, paprika
+8. **Chicken and Rice Bowl**: Chicken breast, rice, olive oil, garlic powder, onion powder, paprika
+9. **Beef and Quinoa Bowl**: Ground beef, quinoa, olive oil, garlic powder, onion powder, paprika
+10. **Salmon and Vegetable Packets**: Salmon fillets, canned black beans, canned diced tomatoes, olive oil, garlic powder, onion powder, paprika
+11. **Chicken and Vegetable Fritters**: Chicken breast, canned green beans, olive oil, garlic powder, onion powder, paprika
+12. **Beef and Bacon Wraps**: Ground beef, bacon, tortillas, olive oil, garlic powder, onion powder, paprika
+13. **Shrimp and Pasta Salad**: Shrimp, pasta, canned diced tomatoes, olive oil, garlic powder, onion powder, paprika
+14. **Salmon and Quinoa Cakes**: Salmon fillets, quinoa, olive oil, garlic powder, onion powder, paprika
+15. **Chicken and Vegetable Kabobs**: Chicken breast, canned green beans, olive oil, garlic powder, onion powder, paprika
+
+These are just a few examples of the many Repurpose Prepared Foods items that can be made with the given ingredients. The possibilities are endless, and the specific items will depend on the chef's creativity and the desired flavors and textures.
