@@ -37,4 +37,4 @@ def find_the_product_recommendation(product_name: str = '', product_quantity: st
         stream=True
     )
     all_text = str().join([chunk.choices[0].text for chunk in response])
-    return {"recycle_suggestion":all_text}
+    return all_text
