@@ -7,7 +7,7 @@ import time
 
 def redistribute_classification(df_km):
     scaler = joblib.load('./model/scaler.pkl') 
-    print(df_km)
+    print(df_km, 'df_km')
     X_train = scaler.transform(df_km)
     knn = joblib.load("./model/knn.pkl")
     return knn.predict(X_train)

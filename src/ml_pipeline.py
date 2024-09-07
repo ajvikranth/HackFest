@@ -6,16 +6,19 @@ def main(expiresAt, store_id):
     df = data_processing(expiresAt, store_id)
     if df.empty:
         print("heeeeeereeeee")
-        return { "message": " No products in which are about to expire "}
+        return { "message": ""}
     chosen_features = ["expire_in", "remaining_quantity", "price", "weight"]
     df_km = df[chosen_features]
+    print(df_km)
     distribute = redistribute_classification(df_km)
     print(distribute)
     recycle = [not bool(x) for x in distribute]
+    
+    print(df[[recycle]])
     print(df[recycle][['name',"available"]])
 
     if df[recycle][['name',"available"]].empty:
-        return { "message": " No products in which are about to expire "}
+        return { "message": ""}
     recycle_input = df[recycle][['name',"available"]]
     return find_the_product_recommendation(recycle_input)
 

@@ -1,16 +1,18 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import datetime
 from ml_pipeline import main
 
 app = Flask(__name__)
+CORS(app)
 
-
-@app.route('/get_data', methods=['GET'])
+@app.route('/get_data', methods=['POST'])
 def get_data():
-    expiresAt = request.args.get('expiresAt')
-    store_id = request.args.get('store_id')
-    
-    # Validate inputs
+    print(request.json)
+    expiresAt = request.json['expires_at']
+    store_id = request.json['store_id']
+    date_obj = datetime.datetime.strptime(expiresAt, "%Y-%m-%dT%H:%M:%S.000Z")
+    expiresAt = date_obj.strftime("%Y-%m-%d")
     if not expiresAt or not store_id:
         return jsonify({"error": "Missing expiresAt or store_id"}), 400
     
