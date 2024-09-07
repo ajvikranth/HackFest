@@ -24,7 +24,7 @@ def handle_threshold_for_expiry(date):
         return 'c4'
     return 'c5'
 
-def api_data_preprocessing(expire):
+def api_data_preprocessing(expire, store_id):
 
     df = pd.DataFrame(get_data())
     df['expiresAt'] = pd.to_datetime(df['expiresAt'])
@@ -71,7 +71,9 @@ def api_data_preprocessing(expire):
 
     # final_df.to_csv('updated.csv',index=False)
 
-    return final_df[final_df['expiresAt'] == expire]
+    processed_df = final_df[(final_df['expiresAt'] == expire) & (final_df['store_id'] == store_id)]
+
+    return processed_df
 
 def scale(x):
     if "kg" in x:
@@ -84,9 +86,9 @@ def scale(x):
         return float(x[:-1])*1000
     return float(x)
 
-def data_processing(expiry):
+def data_processing(expiry, store_id):
     expiry = datetime.strptime(expiry, '%Y-%m-%d')
-    df = api_data_preprocessing(expiry)
+    df = api_data_preprocessing(expiry, store_id)
     df['remaining_quantity'] = df['demand'] - df['available']
     df['weight'] = df['weight'].apply(scale)
     
@@ -94,5 +96,6 @@ def data_processing(expiry):
 
 if __name__ == "__main__":
     date_str = '2024-09-23'
+    store_id = 2
     
-    print(data_processing(date_str))  # printed in default format
+    print(data_processing(date_str, store_id))  # printed in default format
