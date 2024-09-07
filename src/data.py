@@ -1,31 +1,30 @@
 import requests
-
 import random
 import pandas as pd
+import joblib
+from sklearn.preprocessing import StandardScaler
 
 
 def get_data():
     url = "https://hackathon-products-api.apps.01.cf.eu01.stackit.cloud/api/articles"
-    response = requests.get(url)
+    response = requests.get(url, timeout=50)
     data = response.json()
-    
     return data
 
 def handle_threshold_for_expiry(date):
     if date < 20:
         return 'c1'
-    elif date > 20 and date < 100:
+    if  20 < date < 100:
         return 'c2'
 
-    elif date > 100 and date < 150:
+    if  100 < date < 150:
         return 'c3'
     
-    elif date > 150 and date < 225:
+    if 150 < date < 225:
         return 'c4'
-    else:
-        return 'c5'
+    return 'c5'
 
-def data_processing():
+def api_data_preprocessing():
 
     df = pd.DataFrame(get_data())
     df['expiresAt'] = pd.to_datetime(df['expiresAt'])
@@ -74,5 +73,31 @@ def data_processing():
 
     return final_df
 
-# if __name__ == "__main__":
-#     data_processing()
+def scale(x):
+    if "kg" in x:
+        return float(x[:-2])*1000
+    if "g" in x:
+        return float(x[:-1])
+    if "ml" in x:
+        return float(x[:-2])
+    if "l" in x or "L" in x:
+        return float(x[:-1])*1000
+    return float(x)
+
+def data_processing():
+    df = api_data_preprocessing()
+    df['remaining_quantity'] = df['demand'] - df['available']
+    df['weight'] = df['weight'].apply(scale)
+    chosen_features = ["expire_in", "remaining_quantity", "price", "weight"]
+    df_km = df[chosen_features]
+    return df_km
+
+def redistribute_classification(df_km):
+    scaler = StandardScaler()
+    X_train = scaler.fit_transform(df_km)
+    knn = joblib.load("./model/knn.pkl")
+    print(knn.predict(X_train))
+
+if __name__ == "__main__":
+    df = data_processing()
+    redistribute_classification(df)
