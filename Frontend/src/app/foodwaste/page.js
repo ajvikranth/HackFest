@@ -90,7 +90,7 @@ const Page = () => {
     );
     if (data.status == 200) {
       setSuccess(true);
-      dispatch(handleResultsUpdate({data:data.data.data}))
+      dispatch(handleResultsUpdate(data.data))
       setWarningMessage("Successfully Updated!");
     } 
 
