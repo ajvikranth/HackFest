@@ -24,7 +24,7 @@ def find_the_product_recommendation(product_name: str = '', product_quantity: st
         messages=[
             {
                     "role": "user",
-                    "content": f"Assume you are a Chef.You have the following products and quantites available {product_quantity} of {product_name}. I want a list of all Repurpose Prepared Foods items that could be made with these products as main ingredient and some other ingredients."
+                    "content": f"Assume you are a Chef.You have the following products and quantites available {product_quantity} of {product_name}. I want a list of all Repurpose Prepared Foods items that could be made with these products as main ingredient and some other ingredients. Don't include a preamble"
             },
     ],
         max_tokens=6342,
@@ -50,7 +50,7 @@ def find_the_bundle_recommendation(product_name: str = '', product_quantity: str
         messages=[
             {
                     "role": "user",
-                    "content": f"You are a culinary assistant.You have {product_quantity} of {product_name}. You are assigned a task of creating food making kits with these products and their quantities. Generate a set of 3-5 best bundles (food maker kits) that can be created from these ingredients. Each bundle should contain 3-5 items that would work well together to make a meal or dish. For each bundle, provide a name for the bundle, list out the specific ingredients included, provide a short description of what type of meal or dish the bundle is intended for."
+                    "content": f"You are a culinary assistant.You have {product_quantity} of {product_name}. You are assigned a task of creating food making kits with these products and their quantities. Generate a set of 3-5 best bundles (food maker kits) that can be created from these ingredients. Each bundle should contain 3-5 items that would work well together to make a meal or dish. For each bundle, provide a name for the bundle, list out the specific ingredients included, provide a short description of what type of meal or dish the bundle is intended for. Don't include a preamble"
             },
     ],
         max_tokens=6342,
