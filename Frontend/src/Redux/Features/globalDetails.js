@@ -21,17 +21,17 @@ const initialState = {
   results: {},
   // results: {
   //   message: "success",
-  //   current_store: "",
+  //   current_store: "4",
   //   is_llm: true,
-  //   llm: " ",
-  //   llm_bundle: "",
+  //   llm: "I'm thrilled to introduce our culinary assistant bundles, carefully crafted to bring you the best flavors and convenience. Here are 5 bundles that you can create using the Pork Loin Roast and other available ingredients: **Bundle 1: Classic Comfort** * 1 x Pork Loin Roast (1 lb) * 1 x Bag of Mashed Potato Mix (serves 4) * 1 x Gravy Mix (serves 4) * 1 x Fresh Thyme (1 bunch) This bundle is perfect for a hearty, comforting meal. The Pork Loin Roast is the star of the show, paired with creamy mashed potatoes and a rich, savory gravy. The fresh thyme adds a bright, herbaceous note to the dish. **Bundle 2: Italian-Inspired** * 1 x Pork Loin Roast (1 lb) * 1 x Jar of Marinara Sauce (16 oz) * 1 x Bag of Italian-Style Bread Crumbs (1 lb) * 1 x Fresh Basil (1 bunch) This bundle takes you on a taste tour of Italy. The Pork Loin Roast is marinated in a tangy marinara sauce and topped with crispy Italian-style bread crumbs. The fresh basil adds a pop of color and a burst of fresh flavor. **Bundle 3: Roasted Delight** * 1 x Pork Loin Roast (1 lb) * 1 x Bag of Roasted Vegetable Mix (serves 4) * 1 x Fresh Rosemary (1 bunch) * 1 x Olive Oil (1 bottle) This bundle is perfect for a special occasion or a dinner party. The Pork Loin Roast is roasted to perfection and served with a colorful medley of roasted vegetables. The fresh rosemary adds a fragrant, herbaceous note to the dish. **Bundle 4: BBQ Bonanza** * 1 x Pork Loin Roast (1 lb) * 1 x Bottle of BBQ Sauce (16 oz) * 1 x Bag of Coleslaw Mix (serves 4) * 1 x Fresh Cilantro (1 bunch) This bundle is perfect for a summer BBQ or a casual dinner. The Pork Loin Roast is slathered in a sweet and tangy BBQ sauce and served with a refreshing coleslaw. The fresh cilantro adds a bright, citrusy note to the dish. **Bundle 5: French-Inspired** * 1 x Pork Loin Roast (1 lb) * 1 x Bag of Mushroom and Onion Mix (serves 4) * 1 x Bag of French-Style Bread (1 lb) * 1 x Fresh Parsley (1 bunch) This bundle takes you on a culinary journey to France. The Pork Loin Roast is paired with a rich, earthy mushroom and onion mix and served with a crusty French-style bread. The fresh parsley adds a bright, herbaceous note to the dish. Each bundle is carefully crafted to bring you the best flavors and convenience. Whether you're in the mood for a classic comfort meal or a French-inspired dinner, we've got you covered!",
+  //   llm_bundle: "As a chef, I can suggest the following repurposed prepared foods items using the given products as main ingredients: **Pork Loin Roast** 1. **Carnitas Tacos**: A Mexican dish where the pork loin roast is slow-cooked in lard or oil until tender, then shredded and served in tacos with your choice of toppings. 2. **Pulled Pork Sandwiches**: Similar to carnitas, but served on a bun with barbecue sauce and coleslaw. 3. **Pork Loin Roast with Apple Cider Glaze**: A sweet and savory glaze made with apple cider, Dijon mustard, and herbs is brushed over the pork loin roast during the last 20 minutes of cooking. 4. **Pork Loin Roast with Mushroom Gravy**: Sautéed mushrooms and onions are added to the pan juices to create a rich and savory gravy to serve over the pork loin roast. 5. **Pork Loin Roast with Roasted Vegetables**: The pork loin roast is roasted in the oven with a variety of vegetables such as carrots, Brussels sprouts, and red potatoes. 6. **Pork Loin Roast Quesadillas**: Shredded pork loin roast is used in place of traditional chicken or beef in quesadillas, served with salsa and sour cream. 7. **Pork Loin Roast with BBQ Sauce**: The pork loin roast is slow-cooked in a sweet and tangy BBQ sauce until tender and caramelized. 8. **Pork Loin Roast with Pineapple Salsa**: A fresh and fruity salsa made with pineapple, red onion, jalapeño, cilantro, and lime juice is served over the pork loin roast. 9. **Pork Loin Roast with Polenta**: The pork loin roast is served with a creamy polenta and a side of sautéed spinach. 10. **Pork Loin Roast with Korean-Style BBQ**: The pork loin roast is marinated in a sweet and spicy Korean-inspired BBQ sauce and grilled until caramelized. These are just a few ideas for repurposed prepared foods items using the pork loin roast as the main ingredient. The possibilities are endless, and the final dish can be tailored to your personal taste preferences and dietary needs.",
   //   is_store: true,
-  //   store: {'Store 1': 10, 'Store 2': 5},
-  //   product_names:['apple', 'bannana'],
-  //   expires_in: [20, 10],
-  //   response:[0,1],
-  //   demand: [20,30],
-  //   availability: [20,30]
+  //   store: {'Store 5': 2},
+  //   product_names:['Smoked Haddock Fillet', 'Celery Sticks', 'Pork Loin Roast', 'Dried Rosemary'],
+  //   expires_in: [51, 51, 51, 51],
+  //   response:[0,0,1,0],
+  //   demand: [17,26,12,22],
+  //   availability: [18, 28, 21, 25]
 
   // },
   challenges: {

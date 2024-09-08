@@ -59,6 +59,7 @@ def main(expiresAt, store_id):
                     output_json['is_llm'] = True
                 redist_llm['name'].append(output[0])
                 redist_llm['available'].append(output[1][1])
+        output_json['store'] = {key : value for key, value in output_json['store'].items() if value != 0}
     else:
         output_json['is_store'] = False
 
