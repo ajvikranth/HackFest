@@ -33,12 +33,19 @@ def main(expiresAt, store_id):
 
     if sum(recycle) > 0:
         output_json['is_llm'] = True
+        print("LLM", df[recycle])
+        for output in df[recycle].values:
+            output_json['product_names'].append(output[1])
+            output_json['response'].append(1)
+            output_json['expires_in'].append(output[2])
+            output_json['demand'].append(output[3])
+            output_json['availability'].append(output[4])
     if not df[redistribute][['name',"available"]].empty:
         output_df = redistributed_products(data=df[redistribute], base_data=base_df, store_id=store_id)
         print(output_df)
         redist_llm = {'name' : [], 'available' : []}
         for output in output_df.values:
-            if sum(list(output[1][0].values())) > 1:
+            if sum(list(output[1][0].values())) > 1 or output[1][1] > 0:
                 output_json['is_store'] = True
                 for key, value in output[1][0].items():
                     if key in output_json['store']:
