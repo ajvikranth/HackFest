@@ -188,13 +188,13 @@ const Results = () => {
           )}
         {results.message == 'success' && results.is_llm &&
           <><div className="mx-[20px] font-[30px]">
-          <div className="text-[20px] mx-[30px] my-[30px]  border-black border-[1px] border-solid text-[40px] p-[10px] text-center ">Suggestion on Bundle Products </div>
+          <div className="text-[20px] mx-[30px] my-[30px]  border-black border-[1px] border-solid text-[40px] p-[10px] text-center "> Suggestion for Meal Kits   </div>
           { <h1 className="text-[20px] mx-[30px] my-[30px] bg-[#ffffdf] border-[black] p-[50px] text-[20px] border-black border-[1px] border-solid  ">
                   {results.llm_bundle}</h1> }
 
         </div>
         <div className="mx-[20px] font-[30px]">
-          <div className="text-[20px] mx-[30px] my-[30px]  border-black border-[1px] border-solid text-[40px] p-[10px] text-center ">Suggestion to Avoid Food Wastage </div>
+          <div className="text-[20px] mx-[30px] my-[30px]  border-black border-[1px] border-solid text-[40px] p-[10px] text-center ">Recipes for excess Products </div>
           {results.message == 'success' && results.is_llm && <h1 className="text-[20px] mx-[30px] my-[30px] bg-[#ffffdf] border-[black] p-[50px] text-[20px] border-black border-[1px] border-solid  ">
                   {results.llm}</h1> }
                   

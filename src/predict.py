@@ -16,7 +16,6 @@ def find_the_product_recommendation(product_name: str = '', product_quantity: st
     """
     """
     load_dotenv("../.envfile")
-    time.sleep(1)
     TOGETHER_API = os.getenv('TOGETHER_API')
     client = Together(api_key=TOGETHER_API)
 
@@ -43,7 +42,6 @@ def find_the_bundle_recommendation(product_name: str = '', product_quantity: str
     """
     """
     load_dotenv("../.envfile")
-    time.sleep(1)
     TOGETHER_API = os.getenv('TOGETHER_API')
     client = Together(api_key=TOGETHER_API)
 
